@@ -6,12 +6,12 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:43 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 15:40:22 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/13 17:11:23 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEEVENT_HPP
+# define ZOMBIEEVENT_HPP
 # include <iostream>
 # include <stdlib.h>
 # include <time.h>

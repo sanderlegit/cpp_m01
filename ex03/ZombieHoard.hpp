@@ -6,12 +6,12 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 15:30:03 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 15:52:06 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/13 17:11:37 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIEHOARD_HPP
-# define ZOMBIEEHOARD_HPP
+# define ZOMBIEHOARD_HPP
 # include <iostream>
 # include <stdlib.h>
 # include <time.h>
