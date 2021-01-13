@@ -6,20 +6,29 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 12:04:29 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 12:22:13 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/13 12:49:37 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
-int		main(void) {
+void	ponyOnTheStack(void) {
 	Pony	ponyOnTheStack = Pony("Alfred", "Sugar Cubes", 250, 19);
-	Pony	*ponyOnTheHeap = new Pony("Heapy", "Malloced Memory", 180, 13);
 
 	ponyOnTheStack.announce();
+	return;
+}
+
+void	ponyOnTheHeap(void) {
+	Pony	*ponyOnTheHeap = new Pony("Heapy", "Malloced Memory", 180, 13);
+
 	ponyOnTheHeap->announce();
-
 	delete ponyOnTheHeap;
+	return;
+}
 
-	return (0); //ponyOnTheStack destructor automatically called
+int		main(void) {
+	ponyOnTheStack();
+	ponyOnTheHeap();
+	return (0);
 }
