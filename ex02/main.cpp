@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:20 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 14:00:50 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/13 15:51:05 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "ZombieEvent.hpp"
 
 void	stackZ() {
-	std::cout << std::endl << "A wild Zed appeared (on the stack)!" << std::endl;
 	Zombie		stackZed = Zombie("Stacky", "Crawler");
 
 	stackZed.announce();
@@ -26,9 +25,6 @@ void	eventZ() {
 	Zombie			*zed1;
 	Zombie			*zed2;
 
-
-	std::cout << std::endl << "Starting zombie event! AMBUSH!" << std::endl;
-
 	ambush.setZombieType("Runner");
 	zed1 = ambush.newZombie("Steve");
 	zed1->announce();
@@ -39,6 +35,7 @@ void	eventZ() {
 
 	delete zed1;
 	delete zed2;
+	return;
 }
 
 void	randomZ() {
@@ -46,18 +43,21 @@ void	randomZ() {
 	Zombie			*random1;
 	Zombie			*random2;
 
-	std::cout << std::endl << "Starting zombie event! Highway!" << std::endl;
-
 	highway.setZombieType("Shambler");
 	random1 = highway.randomChump();
 	random2 = highway.randomChump();
 
 	delete random1;
 	delete random2;
+	return;
 }
 
 int		main(void) {
+	std::cout << std::endl << "A wild Zed appeared (on the stack)!" << std::endl;
 	stackZ();
+	std::cout << std::endl << "AMBUSH!" << std::endl;
 	eventZ();
+	std::cout << std::endl << "Random Event!" << std::endl;
 	randomZ();
+	return(0);
 }

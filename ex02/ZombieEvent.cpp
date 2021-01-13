@@ -6,18 +6,20 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:40 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 13:57:58 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/13 15:26:07 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
 ZombieEvent::ZombieEvent(void) {
+	std::cout << "Starting zombie event!" << std::endl;
 	srand((int) time(0));
 	return;
 }
 
 ZombieEvent::~ZombieEvent(void) {
+	std::cout << "Ending zombie event!" << std::endl;
 	return;
 }
 

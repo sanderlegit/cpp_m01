@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:43 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 13:54:34 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/13 15:40:22 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class ZombieEvent {
 		ZombieEvent(void);
 		~ZombieEvent(void);
 
-		void	setZombieType(std::string type);
-		Zombie	*newZombie(std::string name);
-		Zombie	*randomChump(void);
+		void			setZombieType(std::string type);
+		Zombie			*newZombie(std::string name);
+		Zombie			*randomChump(void);
 	private:
 		std::string		type;
 };

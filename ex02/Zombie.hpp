@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:27 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 13:30:46 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/13 15:54:00 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Zombie {
 		Zombie(std::string name_, std::string type_);
 		~Zombie(void);
 
-		void	announce(void);
+		void			announce(void);
 	private:
-		std::string		name;
-		std::string		type;
+		std::string		_name;
+		std::string		_type;
 };
 
 #endif

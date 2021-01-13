@@ -6,22 +6,23 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:24 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 13:55:22 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/13 15:54:21 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name_, std::string type_) : name(name_), type(type_) {
-	std::cout << "Zombie " << this->name << " was created." << std::endl;
+Zombie::Zombie(std::string name_, std::string type_) : _name(name_), _type(type_) {
+	std::cout << "Zombie " << this->_name << " was created." << std::endl;
+	return;
 }
 
 Zombie::~Zombie(void) {
-	std::cout << "Zombie " << this->name << " was deleted." << std::endl;
+	std::cout << "Zombie " << this->_name << " was deleted." << std::endl;
 	return;
 }
 
 void	Zombie::announce(void) {
-	std::cout << "<" << name << " (" << type << ")> Braiiiiiiinnnssss..." << std::endl;
+	std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss..." << std::endl;
 	return;
 }
