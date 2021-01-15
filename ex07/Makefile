@@ -6,7 +6,7 @@
 #    By: averheij <averheij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/11 15:02:04 by averheij      #+#    #+#                  #
-#    Updated: 2021/01/15 13:33:32 by averheij      ########   odam.nl          #
+#    Updated: 2021/01/15 13:57:54 by averheij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,11 @@ $(OBJDIR)/%.o: %.cpp
 	$(CC) -c $< -o $@
 
 clean:
-	rm $(OFILES)
+	rm -f $(OFILES)
 
 fclean: clean
 	rm -rf $(OBJDIR)
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

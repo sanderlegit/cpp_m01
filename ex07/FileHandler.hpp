@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 12:11:28 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/15 13:24:28 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/15 13:53:45 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ class FileHandler {
 		int				writeStr(std::string *str);
 		int				closeOutput(void);
 	private:
-		std::ifstream	_fin;
+		std::ifstream	*_fin;
 		std::string		_finname;
-		std::ofstream	_fout;
+		std::ofstream	*_fout;
 		std::string		_foutname;
 		int				_EOF;
 
