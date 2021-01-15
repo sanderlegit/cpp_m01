@@ -1,1 +1,16 @@
 oneline a b
+oneline a a
+oneline a aa
+twolines a b
+twolines kn wowza
+twolines kn kkn
+onechar a b
+onechar a a
+onechar a aa
+onechar a aaaaaa
+emptylinesjustonechar a z
+emptylinesonechar a z
+sentences test test
+sentences test testtest
+sentences . .....
+sentences . test
