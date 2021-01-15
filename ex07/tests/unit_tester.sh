@@ -84,7 +84,7 @@ run_test() {
 	SREPLACE=$(echo "$line" | awk '{print $3}')
 	EXPECTED=$(sed "s/$SFIND/$SREPLACE/g" $SFILE)
 	$(${BINARY_PATH}${BINARY} $line 2>/dev/null)
-	RESULT=(cat $SFILE)
+	RESULT=$(cat "$SFILE.replace")
 	if [ "$RESULT" = "$EXPECTED" ]; then
 		printf_color $GREEN "[OK]"
 		let PASS++
@@ -120,6 +120,6 @@ fi
 parse_options $@
 
 FILESTATE_SET=0
-cleanup
+#cleanup
 get_test $@
-cleanup
+#cleanup

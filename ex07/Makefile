@@ -6,7 +6,7 @@
 #    By: averheij <averheij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/11 15:02:04 by averheij      #+#    #+#                  #
-#    Updated: 2021/01/15 13:57:54 by averheij      ########   odam.nl          #
+#    Updated: 2021/01/15 17:22:24 by averheij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,9 +42,3 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-test: all
-	@echo "\n\t\t!TEST"
-	@echo "\tCorrect: All arguments as one string, All alpha uppercase\n"
-	cd tests;
-	./unit_tester.sh

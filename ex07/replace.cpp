@@ -6,69 +6,75 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 12:05:38 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/15 13:51:35 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/15 17:33:44 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FileHandler.hpp"
 #include <cstring>
-#include <stdio.h>
 
-std::string	*str2upper(const char *str)
-{
-	std::string		*ret = new std::string;
-	while (*str)
-	{
-		ret += std::toupper(*str);
-		str++;
-	}
-	return (ret);
-}
-
-int			doReplace(FileHandler *file, const char *s1, const char *s2) {
+int			doReplace(std::ifstream *ifs, std::ofstream *ofs, const char *s1, const char *s2) {
 	std::string		*line;
+	std::string		buf;
+	//char			buff[8];
 	int				s1len = strlen(s1);
 	int				s2len = strlen(s2);
 	int				pos = 0;
 
-	while (!file->getEOF()) {
-		line = file->getLine();
-		if (!line)
-			return (1);
-		while (pos > 0) {
-			pos = line->find(s1, pos);
+	line = new std::string();
+	while (!ifs->eof()) {
+		line->clear();
+		getline(*ifs, *line);
+		//std::cerr << (line->find("\n", 0) == -1) << std::endl;
+		//while (line->find("\n", 0) == -1) {
+			//ifs->getline(buff, 7);
+			//buff[7] = '\0';
+			//line->append(buff);
+			//std::cerr << line->c_str() << " "<< line->find("\n", 0)  <<" "<< buff << std::endl;
+			//break;
+		//}
+
+		pos = line->find(s1, 0);
+			std::cerr << *line << " " << pos << std::endl;
+		while (pos != -1) {
 			line->replace(pos, s1len, s2);
 			pos += s2len;
+			std::cerr << *line << " " << pos << std::endl;
+			pos = line->find(s1, pos);
 		}
-		if (file->writeStr(line)) {
-			delete line;
-			return (1);
-		}
-		delete line;
+		*ofs << *line << std::endl;
+		//ofs->write("\n", 1);
+		std::cerr << "hello" << std::endl;
+	}
+	delete line;
+	return (0);
+}
+
+int			openFiles(std::ifstream *ifs, std::ofstream *ofs, const char **argv) {
+	std::string		outName;
+
+	ifs->open(argv[1]);
+	if (!ifs->is_open())
+		return (1);
+	outName.append(argv[1]);
+	outName.append(".replace");
+	ofs->open(outName.c_str());
+	if (!ofs->is_open()) {
+		ifs->close();
+		return (1);
 	}
 	return (0);
 }
 
-int		openFiles(FileHandler *file, const char **argv) {
-	std::string		*outName;
-
-	file = new FileHandler();
-	if (file->openInput(argv[1]));
-		return (1);
-	outName = str2upper(argv[1]);
-	outName->append(".replace");
-	if (file->openOutput(outName->c_str())) {
-		delete outName;
-		return (1);
-	}
-	delete outName;
-	return (0);
+int			exit(std::ifstream *ifs, std::ofstream *ofs, int ret) {
+	ifs->close();
+	ofs->close();
+	return (ret);
 }
 
-int		main(int argc, const char **argv) {
-	FileHandler		*file;
-	int				ci;
-	int				co;
+int			main(int argc, const char **argv) {
+	std::ifstream		ifs;
+	std::ofstream		ofs;
 
 	if (argc != 4) {
 		std::cerr << "replace: invalid args: must be ./replace 'filename' 's1' 's2'" << std::endl;
@@ -78,18 +84,11 @@ int		main(int argc, const char **argv) {
 		std::cerr << "replace: invalid args: non zero length strings 's1' 's2'" << std::endl;
 		return (2);
 	}
-	if (openFiles(file, argv)) {
-		delete file;
+	if (openFiles(&ifs, &ofs, argv)) {
+		std::cerr << "replace: open error: '" << argv[1] << "'" << std::endl;
 		return (1);
 	}
-	if (doReplace(file, argv[2], argv[3])) {
-		delete file;
-		return (1);
-	}
-	ci = file->closeInput();
-	co = file->closeOutput();
-	delete file;
-	if (ci || co)
-		return (1);
-	return (0);
+	if (doReplace(&ifs, &ofs, argv[2], argv[3]))
+		return (exit(&ifs, &ofs, 1));
+	return (exit(&ifs, &ofs, 0));
 }

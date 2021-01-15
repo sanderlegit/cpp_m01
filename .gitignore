@@ -1,4 +1,4 @@
 a.out
 *.o
-
-ex07/replace
+replace
+*.replace
