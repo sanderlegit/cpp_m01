@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 12:05:38 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/15 17:33:44 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/15 17:43:40 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,21 @@
 
 int			doReplace(std::ifstream *ifs, std::ofstream *ofs, const char *s1, const char *s2) {
 	std::string		*line;
-	std::string		buf;
-	//char			buff[8];
 	int				s1len = strlen(s1);
 	int				s2len = strlen(s2);
-	int				pos = 0;
+	int				pos;
 
 	line = new std::string();
 	while (!ifs->eof()) {
 		line->clear();
 		getline(*ifs, *line);
-		//std::cerr << (line->find("\n", 0) == -1) << std::endl;
-		//while (line->find("\n", 0) == -1) {
-			//ifs->getline(buff, 7);
-			//buff[7] = '\0';
-			//line->append(buff);
-			//std::cerr << line->c_str() << " "<< line->find("\n", 0)  <<" "<< buff << std::endl;
-			//break;
-		//}
-
 		pos = line->find(s1, 0);
-			std::cerr << *line << " " << pos << std::endl;
 		while (pos != -1) {
 			line->replace(pos, s1len, s2);
 			pos += s2len;
-			std::cerr << *line << " " << pos << std::endl;
 			pos = line->find(s1, pos);
 		}
 		*ofs << *line << std::endl;
-		//ofs->write("\n", 1);
-		std::cerr << "hello" << std::endl;
 	}
 	delete line;
 	return (0);
