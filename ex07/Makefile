@@ -6,12 +6,12 @@
 #    By: averheij <averheij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/11 15:02:04 by averheij      #+#    #+#                  #
-#    Updated: 2021/01/15 17:22:24 by averheij      ########   odam.nl          #
+#    Updated: 2021/01/19 10:54:03 by averheij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	replace
-CPPFILES	=	replace.cpp FileHandler.cpp
+CPPFILES	=	replace.cpp
 OBJDIR		=	objects
 OFILES		=	$(CPPFILES:%.cpp=$(OBJDIR)/%.o)
 OS      	=   $(shell uname)

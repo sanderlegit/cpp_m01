@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 17:07:20 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:27:24 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/19 10:52:45 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class HumanA {
 
 		void		attack(void) const;
 	private:
-		Weapon		&_weapon;
 		std::string	_name;
+		Weapon		&_weapon;
 };
 
 #endif

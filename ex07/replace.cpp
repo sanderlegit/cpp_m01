@@ -6,12 +6,13 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 12:05:38 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/15 17:43:40 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/19 10:53:49 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FileHandler.hpp"
 #include <cstring>
+#include <iostream>
+#include <fstream>
 
 int			doReplace(std::ifstream *ifs, std::ofstream *ofs, const char *s1, const char *s2) {
 	std::string		*line;
