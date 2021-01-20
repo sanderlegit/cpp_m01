@@ -6,7 +6,7 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 12:05:38 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/19 10:53:49 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/20 11:03:13 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,15 @@ int			main(int argc, const char **argv) {
 	std::ofstream		ofs;
 
 	if (argc != 4) {
-		std::cerr << "replace: invalid args: must be ./replace 'filename' 's1' 's2'" << std::endl;
+		std::cout << "replace: invalid args: must be ./replace 'filename' 's1' 's2'" << std::endl;
 		return (2);
 	}
 	if (strlen(argv[2]) == 0 || strlen(argv[3]) == 0) {
-		std::cerr << "replace: invalid args: non zero length strings 's1' 's2'" << std::endl;
+		std::cout << "replace: invalid args: non zero length strings 's1' 's2'" << std::endl;
 		return (2);
 	}
 	if (openFiles(&ifs, &ofs, argv)) {
-		std::cerr << "replace: open error: '" << argv[1] << "'" << std::endl;
+		std::cout << "replace: open error: '" << argv[1] << "'" << std::endl;
 		return (1);
 	}
 	if (doReplace(&ifs, &ofs, argv[2], argv[3]))
