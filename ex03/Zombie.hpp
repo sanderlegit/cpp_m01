@@ -6,13 +6,14 @@
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:27 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 15:45:46 by averheij      ########   odam.nl         */
+/*   Updated: 2021/01/22 12:56:36 by averheij      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 # include <iostream>
+# include <stdlib.h>
 
 class Zombie {
 	public:

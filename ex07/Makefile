@@ -6,7 +6,7 @@
 #    By: averheij <averheij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/11 15:02:04 by averheij      #+#    #+#                  #
-#    Updated: 2021/01/19 10:54:03 by averheij      ########   odam.nl          #
+#    Updated: 2021/01/22 12:57:17 by averheij      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ ifeq ($(OS),Linux)
 else
 	CC		=	clang++
 endif
-FLAGS		=	-Wall -Werror -Wextra
+FLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
 FLAGS		+=	-g
 
 all: $(NAME)
