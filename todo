@@ -1,8 +1,8 @@
 old
 00	deleted
 01	deleted
-02	-> 00 complete
-03
+02	-> 00
+03	-> 01
 04
 05
 06
@@ -12,7 +12,7 @@ old
 
 new
 00	done
-01
+01	WIP
 02
 03
 04
