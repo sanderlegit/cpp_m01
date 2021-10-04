@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ZombieEvent.hpp                                    :+:    :+:            */
+/*   Zombie.hpp                                        e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/01/13 13:01:43 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 17:11:23 by averheij      ########   odam.nl         */
+/*   Created: 2021/01/13 13:01:27 by averheij      #+#    #+#                 */
+/*   Updated: 2021/10/04 12:47:12 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEVENT_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 # include <iostream>
-# include <stdlib.h>
-# include <time.h>
-# include "Zombie.hpp"
 
-class ZombieEvent {
+class Zombie {
 	public:
-		ZombieEvent(void);
-		~ZombieEvent(void);
+		Zombie(std::string name_);
+		~Zombie(void);
 
-		void			setZombieType(std::string type);
-		Zombie			*newZombie(std::string name);
-		Zombie			*randomChump(void);
+		void			announce(void);
 	private:
-		std::string		type;
+		std::string		_name;
 };
 
 #endif
