@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile                                          e8'   8   '8e           #
 #                                                      +:+                     #
 #    By: averheij <averheij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/11 15:02:04 by averheij      #+#    #+#                  #
-#    Updated: 2021/01/22 12:57:17 by averheij      ########   odam.nl          #
+#    Updated: 2021/10/04 15:05:14 by dries               **ee8ee**             #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,11 +34,17 @@ $(OBJDIR):
 $(OBJDIR)/%.o: %.cpp
 	$(CC) -c $< -o $@
 
+run: all
+	./test.sh $(VERBOSE)
+
+runc: run fclean
+
 clean:
 	rm -f $(OFILES)
+	rm -rf $(OBJDIR)
+	rm -rf tests/*.replace
 
 fclean: clean
-	rm -rf $(OBJDIR)
 	rm -f $(NAME)
 
 re: fclean all

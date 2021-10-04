@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   replace.cpp                                        :+:    :+:            */
+/*   replace.cpp                                       e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/15 12:05:38 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/20 11:03:13 by averheij      ########   odam.nl         */
+/*   Updated: 2021/10/04 15:14:13 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,20 @@ int			doReplace(std::ifstream *ifs, std::ofstream *ofs, const char *s1, const ch
 	int				pos;
 
 	line = new std::string();
-	while (!ifs->eof()) {
+	while (1) {
 		line->clear();
 		getline(*ifs, *line);
 		pos = line->find(s1, 0);
 		while (pos != -1) {
-			line->replace(pos, s1len, s2);
+			line->erase(pos, s1len);
+			line->insert(pos, s2);
 			pos += s2len;
 			pos = line->find(s1, pos);
 		}
-		*ofs << *line << std::endl;
+		*ofs << *line;
+		if (ifs->eof())
+			break;
+		*ofs << std::endl;
 	}
 	delete line;
 	return (0);
