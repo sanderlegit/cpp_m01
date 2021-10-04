@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   HumanB.hpp                                         :+:    :+:            */
+/*   HumanB.hpp                                        e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 17:07:26 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:28:04 by averheij      ########   odam.nl         */
+/*   Updated: 2021/10/04 14:33:19 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class HumanB {
 		void		setWeapon(Weapon &weapon_);
 		void		attack(void) const;
 	private:
-		Weapon		*_weapon;
 		std::string	_name;
+		Weapon		*_weapon;
 };
 
 #endif

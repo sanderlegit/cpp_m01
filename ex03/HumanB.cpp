@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   HumanB.cpp                                         :+:    :+:            */
+/*   HumanB.cpp                                        e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 17:07:23 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:27:58 by averheij      ########   odam.nl         */
+/*   Updated: 2021/10/04 14:31:45 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name_) : _name(name_) {
+HumanB::HumanB(std::string name_) : _name(name_), _weapon(NULL) {
 	return;
 }
 
@@ -26,5 +26,8 @@ void	HumanB::setWeapon(Weapon &weapon_) {
 }
 
 void	HumanB::attack(void) const {
-	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
+	if (_weapon)
+		std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
+	else
+		std::cout << this->_name << " is unarmed." << std::endl;
 }
