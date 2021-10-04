@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   Zombie.hpp                                        e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:27 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/22 12:56:36 by averheij      ########   odam.nl         */
+/*   Updated: 2021/10/04 13:19:55 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@
 
 class Zombie {
 	public:
-		Zombie(std::string name_, std::string type_);
-		Zombie(void);
+		Zombie();
+		Zombie(std::string name_);
 		~Zombie(void);
 
 		void			announce(void);
 	private:
 		std::string		_name;
-		std::string		_type;
 };
 
 #endif

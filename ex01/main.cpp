@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   main.cpp                                          e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:20 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 15:58:06 by averheij      ########   odam.nl         */
+/*   Updated: 2021/10/04 13:25:00 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ZombieHoard.hpp"
+#include "Zombie.hpp"
 
-void	hoardHeap() {
-	ZombieHoard		*ambush = new ZombieHoard(7);
-	ambush->announce();
-	delete ambush;
-	return;
-}
-
-void	hoardStack() {
-	ZombieHoard		highway = ZombieHoard(9);
-	highway.announce();
-	return;
-}
+Zombie		*zombieHorde(int N, std::string name);
 
 int		main(void) {
-	std::cout << std::endl << "A wild Hoard appeared (on the heap)!" << std::endl;
-	hoardHeap();
-	std::cout << std::endl << "A wild Hoard appeared (on the stack)!" << std::endl;
-	hoardStack();
+	int			N = 10;
+	Zombie		*zed = zombieHorde(N, "invalid");
+
+	for (int i = 0; i < N; i++)
+		zed[i].announce();
+
+	delete [] zed;
 	return (0);
 }

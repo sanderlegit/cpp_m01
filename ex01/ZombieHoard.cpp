@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ZombieHoard.cpp                                    :+:    :+:            */
+/*   ZombieHoard.cpp                                   e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 15:30:00 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 15:55:26 by averheij      ########   odam.nl         */
+/*   Updated: 2021/10/04 13:25:23 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHoard.hpp"
+#include "Zombie.hpp"
 
-ZombieHoard::ZombieHoard(int zcount) : _size(zcount) {
-	std::cout << "Zombie hoard approaching!" << std::endl;
+Zombie		*zombieHorde(int N, std::string name) {
 	srand((int) time(0));
-	this->_hoard = new Zombie[zcount];
-	return;
+	std::cout << "Zombie hoard approaching!" << std::endl;
+	(void)name;
+	return new Zombie[N];
 }
 
-ZombieHoard::~ZombieHoard(void) {
-	std::cout << "The zombie hoard fades into the distance!" << std::endl;
-	delete [] this->_hoard;
-	return;
-}
-
-void	ZombieHoard::announce(void) {
-	for (int i = 0; i < this->_size; i++)
-		this->_hoard[i].announce();
-	return;
-}
 

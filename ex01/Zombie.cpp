@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.cpp                                         :+:    :+:            */
+/*   Zombie.cpp                                        e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 13:01:24 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/13 15:58:28 by averheij      ########   odam.nl         */
+/*   Updated: 2021/10/04 13:24:42 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name_, std::string type_) : _name(name_), _type(type_) {
+Zombie::Zombie(std::string name_) : _name(name_) {
 	std::cout << "Zombie " << this->_name << " was created." << std::endl;
+	return;
+}
+
+Zombie::~Zombie(void) {
+	std::cout << "Zombie " << this->_name << " was deleted." << std::endl;
+	return;
+}
+
+void	Zombie::announce(void) {
+	std::cout << "<" << this->_name << "> Braiiiiiiinnnssss..." << std::endl;
+	return;
 }
 
 Zombie::Zombie(void) {
@@ -28,16 +39,5 @@ Zombie::Zombie(void) {
 		this->_name  += vowels[(rand() % 5)];
 		this->_name += consonants[(rand() % 21)];
 	}
-	this->_type = "Hoard Zombie";
 	std::cout << "Zombie " << this->_name << " was created." << std::endl;
-}
-
-Zombie::~Zombie(void) {
-	std::cout << "Zombie " << this->_name << " was deleted." << std::endl;
-	return;
-}
-
-void	Zombie::announce(void) {
-	std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss..." << std::endl;
-	return;
 }
