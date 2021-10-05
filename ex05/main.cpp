@@ -6,7 +6,7 @@
 /*   By: dries <sanderlegit@gmail.com>                8!   .dWb.   !8         */
 /*                                                    Y8 .e* 8 *e. 8P         */
 /*   Created: 2021/10/04 15:43:21 by dries             *8*   8   *8*          */
-/*   Updated: 2021/10/04 15:44:42 by dries               **ee8ee**            */
+/*   Updated: 2021/10/05 11:42:09 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,8 @@ int		main(void) {
 	Karen	k;
 
 	k.complain("DEBUG");
+	k.complain("INFO");
+	k.complain("WARNING");
+	k.complain("ERROR");
+	k.complain("NOTHING");
 }
