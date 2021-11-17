@@ -6,7 +6,7 @@
 /*   By: dries <sanderlegit@gmail.com>                8!   .dWb.   !8         */
 /*                                                    Y8 .e* 8 *e. 8P         */
 /*   Created: 2021/10/04 15:43:21 by dries             *8*   8   *8*          */
-/*   Updated: 2021/10/05 11:57:30 by dries               **ee8ee**            */
+/*   Updated: 2021/11/17 12:35:46 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,34 @@ int		main(int argc, char **argv) {
 		exit(1);
 	}
 	{
-		Karen	k((argv[1]));
 
-		k.complain("DEBUG");
-		k.complain("INFO");
-		k.complain("WARNING");
-		k.complain("ERROR");
-		k.complain("NOTHING");
+		std::string		complaintsStr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+		std::string		complaintLevelStr(argv[1]);
+		int				log_level_limit = 4;
+
+		for (int i = 0; i <= 4; i++) {
+			if (complaintLevelStr.compare(complaintsStr[i]) == 0) {
+				log_level_limit = i;
+				break;
+			}
+			if (i == 4)
+				log_level_limit = 4;
+		}
+
+		Karen	k;
+
+		switch (log_level_limit) {
+			case 0:
+				k.complain("DEBUG");
+			case 1:
+				k.complain("INFO");
+			case 2:
+				k.complain("WARNING");
+			case 3:
+				k.complain("ERROR");
+				break;
+			case 4:
+				std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		}
 	}
 }

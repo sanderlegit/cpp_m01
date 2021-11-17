@@ -6,30 +6,23 @@
 /*   By: dries <sanderlegit@gmail.com>                8!   .dWb.   !8         */
 /*                                                    Y8 .e* 8 *e. 8P         */
 /*   Created: 2021/10/04 15:25:57 by dries             *8*   8   *8*          */
-/*   Updated: 2021/10/05 12:01:30 by dries               **ee8ee**            */
+/*   Updated: 2021/11/17 12:33:30 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <functional>
 #include "Karen.hpp"
 
-Karen::Karen(void) {
-	_log_level_limit = 1;
-}
+Karen::Karen(void) {}
 
-Karen::Karen(std::string lll) {
-	set_lll(lll);
-}
-
-Karen::~Karen(void) {
-}
+Karen::~Karen(void) {}
 
 void	Karen::complain(std::string level) {
 	complaint_f		complaints[4] = {&Karen::debug, &Karen::info,
 		&Karen::warning, &Karen::error};
 	std::string		complaintsStr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	for (int i = _log_level_limit; i < 4; i++) {
+	for (int i = 0; i < 4; i++) {
 		if (level.compare(complaintsStr[i]) == 0) {
 			member_call_m(*this, complaints[i])();
 			return;
@@ -58,16 +51,4 @@ last month." << std::endl;
 void	Karen::error(void) {
 	std::cout << "*ERROR* This is unacceptable, I want to speak to the manager\
 " << std::endl;
-}
-
-void	Karen::set_lll(std::string lll) {
-	std::string		complaintsStr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-	for (int i = 0; i < 4; i++) {
-		if (lll.compare(complaintsStr[i]) == 0) {
-			_log_level_limit = i;
-			return;
- 		}
-	}
-	_log_level_limit = 4;
 }

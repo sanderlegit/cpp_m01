@@ -6,11 +6,10 @@
 /*   By: dries <sanderlegit@gmail.com>                8!   .dWb.   !8         */
 /*                                                    Y8 .e* 8 *e. 8P         */
 /*   Created: 2021/10/04 15:25:57 by dries             *8*   8   *8*          */
-/*   Updated: 2021/10/05 11:41:10 by dries               **ee8ee**            */
+/*   Updated: 2021/11/17 12:22:44 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <functional>
 #include "Karen.hpp"
 
 Karen::Karen(void) {

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Weapon.hpp                                         :+:    :+:            */
+/*   Weapon.hpp                                        e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 17:07:32 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:26:13 by averheij      ########   odam.nl         */
+/*   Updated: 2021/11/17 11:58:24 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Weapon {
 		Weapon(std::string type_);
 		~Weapon(void);
 
-		const std::string	&getType(void);
+		const std::string	&getType(void) const;
 		void				setType(std::string type_);
 	private:
 		std::string			_type;

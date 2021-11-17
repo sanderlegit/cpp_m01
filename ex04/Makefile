@@ -6,7 +6,7 @@
 #    By: averheij <averheij@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2021/01/11 15:02:04 by averheij      #+#    #+#                  #
-#    Updated: 2021/10/04 15:05:14 by dries               **ee8ee**             #
+#    Updated: 2021/11/17 12:18:58 by dries               **ee8ee**             #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ else
 endif
 FLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
 FLAGS		+=	-g
+ifneq ($(VERBOSE), 1)
+	VERBOSE	=	0
+endif
 
 all: $(NAME)
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Weapon.cpp                                         :+:    :+:            */
+/*   Weapon.cpp                                        e8'   8   '8e          */
 /*                                                     +:+                    */
 /*   By: averheij <averheij@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/01/13 17:07:30 by averheij      #+#    #+#                 */
-/*   Updated: 2021/01/14 17:26:10 by averheij      ########   odam.nl         */
+/*   Updated: 2021/11/17 11:58:28 by dries               **ee8ee**            */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Weapon::~Weapon(void) {
 	return;
 }
 
-const std::string	&Weapon::getType(void) {
+const std::string	&Weapon::getType(void) const {
 	return (this->_type);
 }
 

@@ -3,3 +3,10 @@ a.out
 replace
 *.replace
 objects
+
+ex00/EX00
+ex01/EX01
+ex02/EX04
+ex03/EX03
+ex05/EX05
+.DS_Store
